@@ -2,41 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* AI Kill Alice Design System - Terminal/Console Aesthetic 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Core terminal colors */
+    --background: 84 47% 5%; /* #0F1208 */
+    --foreground: 105 95% 70%; /* #65FA3C */
+    
+    /* Card and surface colors */
+    --card: 84 47% 5%;
+    --card-foreground: 105 95% 70%;
+    
+    --popover: 84 47% 8%;
+    --popover-foreground: 105 95% 70%;
+    
+    /* Primary terminal green */
+    --primary: 105 95% 70%; /* #65FA3C */
+    --primary-foreground: 84 47% 5%;
+    
+    /* Secondary darker green */
+    --secondary: 84 47% 8%;
+    --secondary-foreground: 105 95% 70%;
+    
+    /* Muted terminal colors */
+    --muted: 84 47% 8%;
+    --muted-foreground: 105 50% 50%;
+    
+    /* Accent lime yellow */
+    --accent: 63 95% 70%; /* #EBFA3C */
+    --accent-foreground: 84 47% 5%;
+    
+    /* Error/destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 105 95% 70%;
+    
+    /* Borders and inputs */
+    --border: 105 95% 70%;
+    --input: 84 47% 8%;
+    --ring: 105 95% 70%;
+    
+    /* Terminal glow effects */
+    --glow-primary: 105 95% 70%;
+    --glow-accent: 63 95% 70%;
+    
+    /* Gradients */
+    --gradient-terminal: linear-gradient(135deg, hsl(var(--background)), hsl(84 47% 3%));
+    --gradient-glow: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    
+    --radius: 0.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +117,56 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Courier New', monospace;
+  }
+  
+  /* Terminal glow effects */
+  .glow {
+    text-shadow: 0 0 10px hsl(var(--glow-primary)), 0 0 20px hsl(var(--glow-primary)), 0 0 30px hsl(var(--glow-primary));
+  }
+  
+  .glow-accent {
+    text-shadow: 0 0 10px hsl(var(--glow-accent)), 0 0 20px hsl(var(--glow-accent)), 0 0 30px hsl(var(--glow-accent));
+  }
+  
+  /* Terminal border glow */
+  .border-glow {
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.5), 0 0 10px hsl(var(--primary) / 0.3), 0 0 15px hsl(var(--primary) / 0.2);
+  }
+  
+  /* Parallax container */
+  .parallax-container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  /* Terminal scanlines effect */
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent 50%, rgba(0, 255, 0, 0.03) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: scanlines 0.1s linear infinite;
+  }
+  
+  @keyframes scanlines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+  }
+  
+  /* Terminal cursor blink */
+  .cursor::after {
+    content: '_';
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
 }
