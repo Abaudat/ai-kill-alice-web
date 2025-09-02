@@ -18,31 +18,28 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-terminal">
       <Navigation />
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-6 pt-24 md:pt-20">
         <div className="max-w-4xl mx-auto space-y-16">
           <div className="text-center space-y-6">
-            <h1 className="text-4xl md:text-6xl font-mono font-bold glow">
+            <h1 className="text-4xl md:text-6xl font-bebas font-bold glow">
               &gt;&gt; CONTACT
             </h1>
-            <p className="text-xl font-mono text-primary/80">
+            <p className="text-xl font-orbitron text-primary/80">
               Get in touch with the developer
             </p>
           </div>
 
           {/* About the Developer Section */}
           <div className="p-8 border-2 border-primary border-glow bg-background/50">
-            <h2 className="text-2xl md:text-3xl font-mono font-bold glow mb-8 flex items-center gap-3">
-              <User className="w-6 w-8 md:w-8" />
+            <h2 className="text-xl md:text-2xl font-bebas font-bold glow mb-8 flex items-center gap-3">
+              <User className="w-6 h-6 md:w-8 md:h-8" />
               &gt;&gt; ABOUT_THE_DEVELOPER
             </h2>
             
-            <div className="space-y-6 font-mono">
+            <div className="space-y-6 font-orbitron">
               <div className="space-y-2">
                 <p className="text-lg text-accent glow-accent">
                   &gt; NAME: ADRIAN BAUDAT
-                </p>
-                <p className="text-sm text-primary/80">
-                  &gt; ROLE: GAME_DEVELOPER
                 </p>
               </div>
               
