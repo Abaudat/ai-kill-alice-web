@@ -8,6 +8,7 @@ const Navigation = () => {
     { path: "/", label: "HOME" },
     { path: "/demo", label: "DEMO" },
     { path: "/presskit", label: "PRESSKIT" },
+    { path: "/contact", label: "CONTACT" },
   ];
 
   return (

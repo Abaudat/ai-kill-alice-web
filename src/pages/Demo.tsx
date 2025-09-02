@@ -66,18 +66,6 @@ const Demo = () => {
               </Button>
             </a>
           </div>
-
-          <div className="mt-16 p-8 border-2 border-primary border-glow bg-background/50">
-            <h2 className="text-2xl font-mono font-bold glow mb-4">
-              &gt;&gt; SYSTEM_REQUIREMENTS
-            </h2>
-            <div className="text-left space-y-2 font-mono text-sm">
-              <p>&gt; OS: Windows 10+, macOS 10.15+, Linux Ubuntu 18.04+</p>
-              <p>&gt; Memory: 512 MB RAM</p>
-              <p>&gt; Storage: 100 MB available space</p>
-              <p>&gt; Network: Broadband Internet connection</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
