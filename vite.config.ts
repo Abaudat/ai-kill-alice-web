@@ -19,5 +19,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/ai-kill-alice-web/'
+  base: mode === 'production' ? '/ai-kill-alice-web/' : '/'
 }));
