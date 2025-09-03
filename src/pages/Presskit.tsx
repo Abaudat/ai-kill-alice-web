@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import ParallaxBackground from "@/components/ParallaxBackground";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
@@ -14,7 +15,7 @@ const Presskit = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-terminal">
+    <ParallaxBackground>
       <Navigation />
       <div className="container mx-auto px-6 pt-24 md:pt-20">
         <div className="max-w-4xl mx-auto space-y-16">
@@ -31,7 +32,7 @@ const Presskit = () => {
           <div className="p-8 border-2 border-primary border-glow bg-background/50">
             <h2 className="text-xl md:text-2xl font-bebas font-bold glow mb-8 flex items-center gap-3">
               <Download className="w-6 md:w-8 h-6 md:h-8" />
-              &gt;&gt; PRESSKIT_DOWNLOAD
+              &gt;&gt; PRESSKIT DOWNLOAD
             </h2>
             
             <div className="space-y-6 font-orbitron">
@@ -56,13 +57,14 @@ const Presskit = () => {
                 className="text-lg"
               >
                 <Download className="w-6 h-6" />
-                DOWNLOAD_PRESSKIT.ZIP
+                <span className="hidden sm:inline">DOWNLOAD_PRESSKIT.ZIP</span>
+                <span className="sm:hidden">DOWNLOAD</span>
               </Button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </ParallaxBackground>
   );
 };
 

@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import ParallaxBackground from "@/components/ParallaxBackground";
 import { Button } from "@/components/ui/button";
 import { Mail, User } from "lucide-react";
 import { useState } from "react";
@@ -16,7 +17,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-terminal">
+    <ParallaxBackground>
       <Navigation />
       <div className="container mx-auto px-6 pt-24 md:pt-20">
         <div className="max-w-4xl mx-auto space-y-16">
@@ -33,7 +34,7 @@ const Contact = () => {
           <div className="p-8 border-2 border-primary border-glow bg-background/50">
             <h2 className="text-xl md:text-2xl font-bebas font-bold glow mb-8 flex items-center gap-3">
               <User className="w-6 h-6 md:w-8 md:h-8" />
-              &gt;&gt; ABOUT_THE_DEVELOPER
+              &gt;&gt; ABOUT THE DEVELOPER
             </h2>
             
             <div className="space-y-6 font-orbitron">
@@ -62,7 +63,7 @@ const Contact = () => {
                     className="text-lg"
                   >
                     <Mail className="w-5 h-5" />
-                    REVEAL_EMAIL
+                    REVEAL EMAIL
                   </Button>
                 ) : (
                   <div className="space-y-2">
@@ -84,7 +85,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </ParallaxBackground>
   );
 };
 

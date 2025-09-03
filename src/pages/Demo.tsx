@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import ParallaxBackground from "@/components/ParallaxBackground";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, MessageCircle } from "lucide-react";
 import steamLogo from "@/assets/steam-white.svg";
@@ -7,7 +8,7 @@ import itchLogo from "@/assets/itch-logo.svg";
 
 const Demo = () => {
   return (
-    <div className="min-h-screen bg-gradient-terminal">
+    <ParallaxBackground>
       <Navigation />
       <div className="container mx-auto px-6 pt-24 md:pt-20">
         <div className="max-w-4xl mx-auto text-center space-y-12">
@@ -71,7 +72,7 @@ const Demo = () => {
           </div>
         </div>
       </div>
-    </div>
+    </ParallaxBackground>
   );
 };
 

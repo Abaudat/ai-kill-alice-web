@@ -36,7 +36,7 @@ const ParallaxBackground = ({ children }: ParallaxBackgroundProps) => {
           transform: "scale(1.1)",
         }}
       >
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-background/80" />
       </div>
       <div className="relative z-10">
         {children}
