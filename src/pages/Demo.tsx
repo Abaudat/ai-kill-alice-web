@@ -23,15 +23,15 @@ const Demo = () => {
 
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <a
-              href="https://store.steampowered.com/app/3236050/AI_Kill_Alice/?utm_source=web&utm_campaign=web_demo_button"
+              href="https://bibibis.itch.io/ai-kill-alice"
               target="_blank"
               rel="noopener noreferrer"
               className="block"
             >
               <Button variant="terminal" size="lg" className="w-full h-24 text-lg font-orbitron bg-background border-primary hover:bg-background/80">
-                <img src={steamLogo} className="w-8 h-8 brightness-0" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Steam" />
+                <img src={itchLogo} className="w-8 h-8 brightness-0" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Itch.io" />
                 <div className="text-left">
-                  <div>STEAM</div>
+                  <div>ITCH.IO</div>
                   <div className="text-xs opacity-70">PLATFORM</div>
                 </div>
                 <ExternalLink className="w-4 h-4 ml-auto" />
@@ -39,15 +39,15 @@ const Demo = () => {
             </a>
 
             <a
-              href="https://bibibis.itch.io/ai-kill-alice"
+              href="https://store.steampowered.com/app/3236050/AI_Kill_Alice/?utm_source=web&utm_campaign=web_demo_button"
               target="_blank"
               rel="noopener noreferrer"
               className="block"
             >
               <Button variant="accent" size="lg" className="w-full h-24 text-lg font-orbitron">
-                <img src={itchLogo} className="w-8 h-8" alt="Itch.io" />
+                <img src={steamLogo} className="w-8 h-8" alt="Steam" />
                 <div className="text-left">
-                  <div>ITCH.IO</div>
+                  <div>STEAM</div>
                   <div className="text-xs opacity-70">PLATFORM</div>
                 </div>
                 <ExternalLink className="w-4 h-4 ml-auto" />
