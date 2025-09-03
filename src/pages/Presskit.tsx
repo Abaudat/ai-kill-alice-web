@@ -28,8 +28,8 @@ const Presskit = () => {
           </div>
 
           {/* Presskit Download Section */}
-          <div className="p-8 border-2 border-accent border-glow bg-background/50">
-            <h2 className="text-xl md:text-2xl font-bebas font-bold glow-accent mb-8 flex items-center gap-3">
+          <div className="p-8 border-2 border-primary border-glow bg-background/50">
+            <h2 className="text-xl md:text-2xl font-bebas font-bold glow mb-8 flex items-center gap-3">
               <Download className="w-6 md:w-8 h-6 md:h-8" />
               &gt;&gt; PRESSKIT_DOWNLOAD
             </h2>
