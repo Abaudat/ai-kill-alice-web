@@ -21,7 +21,8 @@ const Demo = () => {
     script.onload = () => {
       // @ts-ignore (Unity loader defines this globally)
       createUnityInstance(canvasRef.current, {
-        dataUrl: import.meta.env.BASE_URL + "Build/Build.data",
+        // dataUrl: import.meta.env.BASE_URL + "Build/Build.data",
+        dataUrl: "https://media.githubusercontent.com/media/Abaudat/ai-kill-alice-web/refs/heads/main/public/Build/Build.data",
         frameworkUrl: import.meta.env.BASE_URL + "Build/Build.framework.js",
         codeUrl: import.meta.env.BASE_URL + "Build/Build.wasm",
         streamingAssetsUrl: import.meta.env.BASE_URL + "StreamingAssets",

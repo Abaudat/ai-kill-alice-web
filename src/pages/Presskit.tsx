@@ -7,7 +7,7 @@ const Presskit = () => {
   const handlePresskitDownload = () => {
     // Create a link to download the presskit folder
     const link = document.createElement('a');
-    link.href = `${import.meta.env.BASE_URL}presskit.zip`;
+    link.href = "https://media.githubusercontent.com/media/Abaudat/ai-kill-alice-web/refs/heads/main/public/presskit.zip";
     link.download = 'AI_Kill_Alice_Presskit.zip';
     document.body.appendChild(link);
     link.click();
