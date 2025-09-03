@@ -45,7 +45,7 @@ const Demo = () => {
               className="block"
             >
               <Button variant="accent" size="lg" className="w-full h-24 text-lg font-orbitron">
-                <img src={steamLogo} className="w-8 h-8" alt="Steam" />
+                <img src={steamLogo} className="w-8 h-8" style={{filter: 'brightness(0)'}} alt="Steam" />
                 <div className="text-left">
                   <div>STEAM</div>
                   <div className="text-xs opacity-70">PLATFORM</div>
