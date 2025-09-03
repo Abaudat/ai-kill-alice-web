@@ -55,11 +55,14 @@ const Demo = () => {
             </h1>
           </div>
 
-          <Button variant="accent" size="lg" className={showDemo ? "hidden" : "w-1/3 h-24 text-lg font-orbitron"} onClick={() => setShowDemo(true)}>
-            <div className="text-left">
-              <div>▶ TRY IN BROWSER</div>
-            </div>
-          </Button>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <Button variant="accent" size="lg" className={showDemo ? "hidden" : "hidden md:inline-block w-full h-24 text-lg font-orbitron col-start-2"} onClick={() => setShowDemo(true)}>
+              <div className="text-left">
+                <div>▶ TRY IN BROWSER</div>
+              </div>
+            </Button>
+          </div>
           <canvas
               ref={canvasRef}
               id="unity-canvas"
@@ -68,15 +71,20 @@ const Demo = () => {
               className={showDemo ? "block bg-[#231F20]" : "hidden"}
           />
 
-          <p className="text-xl font-orbitron text-primary/80">
+          <p className="text-xl font-orbitron text-primary/80 block md:hidden">
+            The demo is available on Steam. Join the community on Discord!
+          </p>
+
+          <p className="text-xl font-orbitron text-primary/80 hidden md:block">
             The demo is also available on Itch.io and Steam. Join the community on Discord!
           </p>
+          
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <a
               href="https://bibibis.itch.io/ai-kill-alice"
               target="_blank"
               rel="noopener noreferrer"
-              className="block"
+              className="hidden md:block"
             >
               <Button variant="terminal" size="lg" className="w-full h-24 text-lg font-orbitron bg-background border-primary hover:bg-background/80">
                 <img src={itchLogo} className="w-8 h-8 brightness-0" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Itch.io" />
