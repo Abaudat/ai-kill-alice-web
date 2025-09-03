@@ -57,8 +57,7 @@ const Presskit = () => {
                 className="text-lg"
               >
                 <Download className="w-6 h-6" />
-                <span className="hidden sm:inline">DOWNLOAD_PRESSKIT.ZIP</span>
-                <span className="sm:hidden">DOWNLOAD</span>
+                DOWNLOAD
               </Button>
             </div>
           </div>
