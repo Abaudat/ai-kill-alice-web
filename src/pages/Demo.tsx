@@ -1,8 +1,8 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, MessageCircle } from "lucide-react";
-import steamLogo from "@/assets/steam-logo.svg";
-import discordLogo from "@/assets/discord-logo.svg";
+import steamLogo from "@/assets/steam-white.svg";
+import discordLogo from "@/assets/discord-white.png";
 import itchLogo from "@/assets/itch-logo.svg";
 
 const Demo = () => {
