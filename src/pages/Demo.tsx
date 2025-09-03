@@ -13,7 +13,7 @@ const Demo = () => {
       <div className="container mx-auto px-6 pt-24 md:pt-20">
         <div className="max-w-4xl mx-auto text-center space-y-12">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-6xl font-bebas font-bold glow">
+            <h1 className="text-4xl md:text-6xl font-bebas font-bold glow tracking-widest">
               &gt;&gt; DEMO
             </h1>
             <p className="text-xl font-orbitron text-primary/80">

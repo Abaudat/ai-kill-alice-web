@@ -20,7 +20,7 @@ const Navigation = () => {
     return (
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 border-b-2 border-primary border-glow backdrop-blur-sm">
         <div className="flex items-center justify-between p-4">
-          <h1 className="text-lg font-bebas text-primary glow">AI KILL ALICE</h1>
+          <h1 className="text-lg font-bebas text-primary glow tracking-widest">AI KILL ALICE</h1>
           <button 
             onClick={() => setIsOpen(!isOpen)}
             className="text-primary hover:text-accent transition-colors"

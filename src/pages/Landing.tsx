@@ -7,7 +7,7 @@ const Landing = () => {
       <Navigation />
       <div className="min-h-screen flex items-center justify-center px-6">
         <div className="text-center space-y-8 max-w-4xl">
-          <h1 className="text-8xl md:text-9xl font-bebas font-bold glow">
+          <h1 className="text-8xl md:text-9xl font-bebas font-bold glow tracking-widest">
             AI KILL ALICE
           </h1>
           <div className="space-y-4">
