@@ -22,7 +22,7 @@ const Demo = () => {
 
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <a
-              href="https://partner.steampowered.com/app/details/3236050/"
+              href="https://store.steampowered.com/app/3236050/AI_Kill_Alice/?utm_source=web&utm_campaign=web_demo_button"
               target="_blank"
               rel="noopener noreferrer"
               className="block"
