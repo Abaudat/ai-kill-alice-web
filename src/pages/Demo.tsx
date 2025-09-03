@@ -28,8 +28,8 @@ const Demo = () => {
               rel="noopener noreferrer"
               className="block"
             >
-              <Button variant="terminal" size="lg" className="w-full h-24 text-lg font-orbitron">
-                <img src={steamLogo} className="w-8 h-8" alt="Steam" />
+              <Button variant="terminal" size="lg" className="w-full h-24 text-lg font-orbitron bg-background border-primary hover:bg-background/80">
+                <img src={steamLogo} className="w-8 h-8 brightness-0" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Steam" />
                 <div className="text-left">
                   <div>STEAM</div>
                   <div className="text-xs opacity-70">PLATFORM</div>
@@ -60,8 +60,8 @@ const Demo = () => {
               rel="noopener noreferrer"
               className="block"
             >
-              <Button variant="outline" size="lg" className="w-full h-24 text-lg font-orbitron">
-                <img src={discordLogo} className="w-8 h-8" alt="Discord" />
+              <Button variant="outline" size="lg" className="w-full h-24 text-lg font-orbitron bg-background border-primary hover:bg-background/80">
+                <img src={discordLogo} className="w-8 h-8" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Discord" />
                 <div className="text-left">
                   <div>DISCORD</div>
                   <div className="text-xs opacity-70">COMMUNITY</div>
