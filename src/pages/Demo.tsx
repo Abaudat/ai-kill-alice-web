@@ -1,12 +1,51 @@
 import Navigation from "@/components/Navigation";
 import ParallaxBackground from "@/components/ParallaxBackground";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, MessageCircle } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import steamLogo from "@/assets/steam-white.svg";
 import discordLogo from "@/assets/discord-white.png";
 import itchLogo from "@/assets/itch-logo.svg";
+import {useEffect, useRef} from "react";
 
 const Demo = () => {
+
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const unityInstanceRef = useRef<any>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+
+  useEffect(() => {
+    if (!canvasRef.current) return;
+
+    const script = document.createElement("script");
+    script.src = import.meta.env.BASE_URL + "Build/OpenGLBuild.loader.js";
+    script.onload = () => {
+      // @ts-ignore (Unity loader defines this globally)
+      createUnityInstance(canvasRef.current, {
+        dataUrl: import.meta.env.BASE_URL + "Build/OpenGLBuild.data",
+        frameworkUrl: import.meta.env.BASE_URL + "Build/OpenGLBuild.framework.js",
+        codeUrl: import.meta.env.BASE_URL + "Build/OpenGLBuild.wasm",
+        streamingAssetsUrl: import.meta.env.BASE_URL + "StreamingAssets",
+        companyName: "ABGames",
+        productName: "AI kill Alice",
+        productVersion: "1.0",
+      }).then((instance: any) => {
+        unityInstanceRef.current = instance;
+      });
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      // cleanup: quit Unity instance if running
+      if (unityInstanceRef.current) {
+        unityInstanceRef.current.Quit().then(() => {
+          console.log("Unity instance stopped.");
+        });
+        unityInstanceRef.current = null;
+      }
+      document.body.removeChild(script);
+    };
+  }, []);
+  
   return (
     <ParallaxBackground>
       <Navigation />
@@ -16,11 +55,19 @@ const Demo = () => {
             <h1 className="text-4xl md:text-6xl font-bebas font-bold glow tracking-widest">
               &gt;&gt; DEMO
             </h1>
-            <p className="text-xl font-orbitron text-primary/80">
-              The demo is also available on Steam and Itch.io
-            </p>
           </div>
 
+          <canvas
+              ref={canvasRef}
+              id="unity-canvas"
+              width={960}
+              height={600}
+              className="bg-[#231F20]"
+          />
+
+          <p className="text-xl font-orbitron text-primary/80">
+            The demo is also available on Steam and Itch.io
+          </p>
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <a
               href="https://bibibis.itch.io/ai-kill-alice"
