@@ -7,7 +7,7 @@ const Presskit = () => {
   const handlePresskitDownload = () => {
     // Create a link to download the presskit folder
     const link = document.createElement('a');
-    link.href = '/presskit.zip'; // This would be a zip file of the presskit folder
+    link.href = `${import.meta.env.BASE_URL}presskit.zip`;
     link.download = 'AI_Kill_Alice_Presskit.zip';
     document.body.appendChild(link);
     link.click();
