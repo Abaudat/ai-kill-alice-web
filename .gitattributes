@@ -1,0 +1,4 @@
+*.data filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+public/Build/Build.data filter=lfs diff=lfs merge=lfs -text
+public/presskit.zip filter=lfs diff=lfs merge=lfs -text

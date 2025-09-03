@@ -5,25 +5,25 @@ import { ExternalLink } from "lucide-react";
 import steamLogo from "@/assets/steam-white.svg";
 import discordLogo from "@/assets/discord-white.png";
 import itchLogo from "@/assets/itch-logo.svg";
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 
 const Demo = () => {
 
+  const [showDemo, setShowDemo] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const unityInstanceRef = useRef<any>(null);
-  const audioContextRef = useRef<AudioContext | null>(null);
 
   useEffect(() => {
-    if (!canvasRef.current) return;
+    if (!showDemo || !canvasRef.current) return;
 
     const script = document.createElement("script");
-    script.src = import.meta.env.BASE_URL + "Build/OpenGLBuild.loader.js";
+    script.src = import.meta.env.BASE_URL + "Build/Build.loader.js";
     script.onload = () => {
       // @ts-ignore (Unity loader defines this globally)
       createUnityInstance(canvasRef.current, {
-        dataUrl: import.meta.env.BASE_URL + "Build/OpenGLBuild.data",
-        frameworkUrl: import.meta.env.BASE_URL + "Build/OpenGLBuild.framework.js",
-        codeUrl: import.meta.env.BASE_URL + "Build/OpenGLBuild.wasm",
+        dataUrl: import.meta.env.BASE_URL + "Build/Build.data",
+        frameworkUrl: import.meta.env.BASE_URL + "Build/Build.framework.js",
+        codeUrl: import.meta.env.BASE_URL + "Build/Build.wasm",
         streamingAssetsUrl: import.meta.env.BASE_URL + "StreamingAssets",
         companyName: "ABGames",
         productName: "AI kill Alice",
@@ -37,19 +37,17 @@ const Demo = () => {
     return () => {
       // cleanup: quit Unity instance if running
       if (unityInstanceRef.current) {
-        unityInstanceRef.current.Quit().then(() => {
-          console.log("Unity instance stopped.");
-        });
+        unityInstanceRef.current.Quit()
         unityInstanceRef.current = null;
       }
       document.body.removeChild(script);
     };
-  }, []);
+  }, [showDemo]);
   
   return (
     <ParallaxBackground>
       <Navigation />
-      <div className="container mx-auto px-6 pt-24 md:pt-20">
+      <div className="container mx-auto px-6 pt-24 md:pt-20 pb-4">
         <div className="max-w-4xl mx-auto text-center space-y-12">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-6xl font-bebas font-bold glow tracking-widest">
@@ -57,16 +55,21 @@ const Demo = () => {
             </h1>
           </div>
 
+          <Button variant="accent" size="lg" className={showDemo ? "hidden" : "w-1/3 h-24 text-lg font-orbitron"} onClick={() => setShowDemo(true)}>
+            <div className="text-left">
+              <div>▶ TRY IN BROWSER</div>
+            </div>
+          </Button>
           <canvas
               ref={canvasRef}
               id="unity-canvas"
               width={960}
               height={600}
-              className="bg-[#231F20]"
+              className={showDemo ? "block bg-[#231F20]" : "hidden"}
           />
 
           <p className="text-xl font-orbitron text-primary/80">
-            The demo is also available on Steam and Itch.io
+            The demo is also available on Itch.io and Steam. Join the community on Discord!
           </p>
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <a
@@ -79,7 +82,7 @@ const Demo = () => {
                 <img src={itchLogo} className="w-8 h-8 brightness-0" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Itch.io" />
                 <div className="text-left">
                   <div>ITCH.IO</div>
-                  <div className="text-xs opacity-70">PLATFORM</div>
+                  <div className="text-xs opacity-70">DEMO</div>
                 </div>
                 <ExternalLink className="w-4 h-4 ml-auto" />
               </Button>
@@ -95,7 +98,7 @@ const Demo = () => {
                 <img src={steamLogo} className="w-8 h-8" style={{filter: 'brightness(0)'}} alt="Steam" />
                 <div className="text-left">
                   <div>STEAM</div>
-                  <div className="text-xs opacity-70">PLATFORM</div>
+                  <div className="text-xs opacity-70">DEMO</div>
                 </div>
                 <ExternalLink className="w-4 h-4 ml-auto" />
               </Button>
