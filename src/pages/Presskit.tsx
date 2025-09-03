@@ -37,17 +37,17 @@ const Presskit = () => {
             
             <div className="space-y-6 font-orbitron">
               <p className="text-primary/90">
-                &gt; Complete media kit including screenshots, logos, trailer, and press release
+                &gt; Complete media kit including screenshots, logos, trailer, and images
               </p>
               
               <div className="space-y-2 text-sm text-primary/70">
                 <p>&gt; CONTENTS:</p>
-                <p className="pl-4">&gt; High-resolution screenshots</p>
-                <p className="pl-4">&gt; Game logos (PNG, SVG formats)</p>
-                <p className="pl-4">&gt; Gameplay trailer</p>
-                <p className="pl-4">&gt; Developer photos</p>
-                <p className="pl-4">&gt; Press release</p>
-                <p className="pl-4">&gt; Fact sheet</p>
+                <p className="pl-4">&gt; Screenshots</p>
+                <p className="pl-4">&gt; Logos</p>
+                <p className="pl-4">&gt; Capsules</p>
+                <p className="pl-4">&gt; Trailers</p>
+                <p className="pl-4">&gt; GIFs</p>
+                <p className="pl-4">&gt; Character sprites</p>
               </div>
               
               <Button 
