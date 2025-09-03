@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import background from "@/assets/background.png";
 
 interface ParallaxBackgroundProps {
   children: React.ReactNode;
@@ -31,7 +32,7 @@ const ParallaxBackground = ({ children }: ParallaxBackgroundProps) => {
         ref={backgroundRef}
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-out scanlines"
         style={{
-          backgroundImage: `url(/lovable-uploads/974238c3-2961-427f-9e1c-10fbc5135147.png)`,
+          backgroundImage: `url(${background})`,
           transform: "scale(1.1)",
         }}
       >
