@@ -1,16 +1,28 @@
-import ParallaxBackground from "@/components/ParallaxBackground";
 import Navigation from "@/components/Navigation";
+import ParallaxBackground from "@/components/ParallaxBackground";
+import { FileText } from "lucide-react";
 
 const Factsheet = () => {
   return (
     <ParallaxBackground>
       <Navigation />
-      <div className="min-h-screen flex items-center justify-center p-4">
-        <div className="max-w-2xl w-full">
-          <div className="bg-background/90 border-2 border-primary border-glow backdrop-blur-sm p-8">
-            <h1 className="text-4xl md:text-6xl font-bebas text-primary glow mb-8 text-center tracking-widest">
-              FACTSHEET
+      <div className="container mx-auto px-6 pt-24 md:pt-20">
+        <div className="max-w-4xl mx-auto space-y-16">
+          <div className="text-center space-y-6">
+            <h1 className="text-4xl md:text-6xl font-bebas font-bold glow tracking-widest">
+              &gt;&gt; FACTSHEET
             </h1>
+            <p className="text-xl font-orbitron text-primary/80">
+              Essential information about AI Kill Alice
+            </p>
+          </div>
+
+          {/* Factsheet Section */}
+          <div className="p-8 border-2 border-primary border-glow bg-background/50">
+            <h2 className="text-xl md:text-2xl font-bebas font-bold glow mb-8 flex items-center gap-3 tracking-widest">
+              <FileText className="w-6 md:w-8 h-6 md:h-8" />
+              &gt;&gt; GAME INFORMATION
+            </h2>
             
             <div className="space-y-6 font-orbitron">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
