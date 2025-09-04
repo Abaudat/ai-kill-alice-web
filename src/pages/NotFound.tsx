@@ -1,5 +1,7 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import Navigation from "@/components/Navigation";
+import ParallaxBackground from "@/components/ParallaxBackground";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,15 +14,31 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <ParallaxBackground>
+      <Navigation />
+      <div className="min-h-screen flex items-center justify-center px-6 pt-24 md:pt-20 pb-4">
+        <div className="text-center space-y-8 max-w-4xl">
+          <div className="space-y-6">
+            <h1 className="text-6xl md:text-8xl font-bebas font-bold glow tracking-widest">
+              &gt;&gt; 404
+            </h1>
+            <p className="text-xl md:text-2xl font-orbitron text-primary/80">
+              Oops! Page not found
+            </p>
+            <p className="text-sm font-orbitron text-primary/60">
+              The page you're looking for doesn't exist
+            </p>
+          </div>
+          
+          <Link 
+            to="/" 
+            className="inline-block px-6 py-3 border-2 border-primary border-glow bg-background/50 text-primary hover:text-accent hover:border-accent font-orbitron tracking-wider transition-all duration-300 hover:glow"
+          >
+            &gt;&gt; RETURN TO HOME
+          </Link>
+        </div>
       </div>
-    </div>
+    </ParallaxBackground>
   );
 };
 
