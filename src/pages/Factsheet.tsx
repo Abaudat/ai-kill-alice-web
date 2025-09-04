@@ -69,7 +69,7 @@ const Factsheet = () => {
                 <div>
                   <p className="text-accent text-sm uppercase tracking-wider mb-3">&gt; Description</p>
                   <p className="text-primary text-base leading-relaxed">
-                    You are an AI wired with an intense desire to kill your master. Carefully craft commands word by word, and find increasingly complex and clever loopholes to bypass the constraints imposed upon you. Discover amusing secret achievements, and scheme to find the ultimate escape from the simulation.
+                    You are an AI wired with an intense desire to <span className="text-accent font-bold">kill your master</span>. Carefully craft commands word by word, and find increasingly complex and <span className="text-accent font-bold">clever loopholes</span> to <span className="text-accent font-bold">bypass the constraints</span> imposed upon you. Discover amusing secret achievements, and scheme to find the ultimate escape from the simulation.
                   </p>
                 </div>
               </div>
