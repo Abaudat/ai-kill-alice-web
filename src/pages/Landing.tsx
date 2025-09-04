@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <ParallaxBackground>
       <Navigation />
-      <div className="min-h-screen flex items-center justify-center px-6">
+      <div className="min-h-screen flex items-center justify-center px-6 pb-4">
         <div className="text-center space-y-8 max-w-4xl">
           {/* Replace text with image */}
           <img

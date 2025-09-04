@@ -17,7 +17,7 @@ const Presskit = () => {
   return (
     <ParallaxBackground>
       <Navigation />
-      <div className="container mx-auto px-6 pt-24 md:pt-20">
+      <div className="container mx-auto px-6 pt-24 md:pt-20 pb-4">
         <div className="max-w-4xl mx-auto space-y-16">
           <div className="text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bebas font-bold glow tracking-widest">
