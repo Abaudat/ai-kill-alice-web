@@ -64,6 +64,15 @@ const Factsheet = () => {
                   </div>
                 </div>
               </div>
+              
+              <div className="mt-8 pt-6 border-t border-primary/30">
+                <div>
+                  <p className="text-accent text-sm uppercase tracking-wider mb-3">&gt; Description</p>
+                  <p className="text-primary text-base leading-relaxed">
+                    You are an AI wired with an intense desire to kill your master. Carefully craft commands word by word, and find increasingly complex and clever loopholes to bypass the constraints imposed upon you. Discover amusing secret achievements, and scheme to find the ultimate escape from the simulation.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
