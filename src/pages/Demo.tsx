@@ -49,52 +49,62 @@ const Demo = () => {
   return (
     <ParallaxBackground>
       <Navigation />
-      <div className="container mx-auto px-6 pt-24 md:pt-20 pb-4">
+      <main className="container mx-auto px-6 pt-24 md:pt-20 pb-4">
         <div className="max-w-4xl mx-auto text-center space-y-12">
-          <div className="space-y-6">
+          <header className="space-y-6">
             <h1 className="text-4xl md:text-6xl font-bebas font-bold glow tracking-widest">
               &gt;&gt; DEMO
             </h1>
-          </div>
+          </header>
 
 
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            <Button variant="accent" size="lg" className={showDemo ? "hidden" : "hidden md:inline-block w-full h-24 text-lg font-orbitron col-start-2"} onClick={() => setShowDemo(true)}>
+          <section className="grid md:grid-cols-3 gap-6 mt-12">
+            <Button 
+              variant="accent" 
+              size="lg" 
+              className={showDemo ? "hidden" : "hidden md:inline-block w-full h-24 text-lg font-orbitron col-start-2"} 
+              onClick={() => setShowDemo(true)}
+              aria-label="Launch AI Kill Alice browser demo"
+            >
               <div className="text-left">
                 <div>▶ TRY IN BROWSER</div>
               </div>
             </Button>
-          </div>
+          </section>
           <canvas
               ref={canvasRef}
               id="unity-canvas"
               width={960}
               height={600}
               className={showDemo ? "block bg-[#231F20]" : "hidden"}
+              role="application"
+              aria-label="AI Kill Alice game demo - Interactive logic puzzle game"
+              tabIndex={showDemo ? 0 : -1}
           />
 
-          <p className="text-xl font-orbitron text-primary/80 block md:hidden">
+          <p className="text-xl font-orbitron text-primary/80 block md:hidden" role="text">
             The demo is available on Steam. Join the community on Discord!
           </p>
 
-          <p className="text-xl font-orbitron text-primary/80 hidden md:block">
+          <p className="text-xl font-orbitron text-primary/80 hidden md:block" role="text">
             The demo is also available on Itch.io and Steam. Join the community on Discord!
           </p>
           
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <section className="grid md:grid-cols-3 gap-6 mt-12" aria-label="Download demo and community links">
             <a
               href="https://bibibis.itch.io/ai-kill-alice"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:block"
+              aria-label="Download AI Kill Alice demo from Itch.io gaming platform"
             >
               <Button variant="terminal" size="lg" className="w-full h-24 text-lg font-orbitron bg-background border-primary hover:bg-background/80">
-                <img src={itchLogo} className="w-8 h-8 brightness-0" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Itch.io" />
+                <img src={itchLogo} className="w-8 h-8 brightness-0" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Itch.io logo - Independent game distribution platform" />
                 <div className="text-left">
                   <div>ITCH.IO</div>
                   <div className="text-xs opacity-70">DEMO</div>
                 </div>
-                <ExternalLink className="w-4 h-4 ml-auto" />
+                <ExternalLink className="w-4 h-4 ml-auto" aria-hidden="true" />
               </Button>
             </a>
 
@@ -103,14 +113,15 @@ const Demo = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="block"
+              aria-label="Download AI Kill Alice demo from Steam gaming platform"
             >
               <Button variant="accent" size="lg" className="w-full h-24 text-lg font-orbitron">
-                <img src={steamLogo} className="w-8 h-8" style={{filter: 'brightness(0)'}} alt="Steam" />
+                <img src={steamLogo} className="w-8 h-8" style={{filter: 'brightness(0)'}} alt="Steam logo - PC gaming platform by Valve" />
                 <div className="text-left">
                   <div>STEAM</div>
                   <div className="text-xs opacity-70">DEMO</div>
                 </div>
-                <ExternalLink className="w-4 h-4 ml-auto" />
+                <ExternalLink className="w-4 h-4 ml-auto" aria-hidden="true" />
               </Button>
             </a>
 
@@ -119,19 +130,20 @@ const Demo = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="block"
+              aria-label="Join AI Kill Alice community on Discord chat platform"
             >
               <Button variant="outline" size="lg" className="w-full h-24 text-lg font-orbitron bg-background border-primary hover:bg-background/80">
-                <img src={discordLogo} className="w-8 h-8" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Discord" />
+                <img src={discordLogo} className="w-8 h-8" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Discord logo - Voice and text chat platform for gamers" />
                 <div className="text-left">
                   <div>DISCORD</div>
                   <div className="text-xs opacity-70">COMMUNITY</div>
                 </div>
-                <ExternalLink className="w-4 h-4 ml-auto" />
+                <ExternalLink className="w-4 h-4 ml-auto" aria-hidden="true" />
               </Button>
             </a>
-          </div>
+          </section>
         </div>
-      </div>
+      </main>
     </ParallaxBackground>
   );
 };

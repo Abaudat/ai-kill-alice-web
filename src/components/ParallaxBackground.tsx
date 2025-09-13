@@ -35,6 +35,8 @@ const ParallaxBackground = ({ children }: ParallaxBackgroundProps) => {
           backgroundImage: `url(${background})`,
           transform: "scale(1.1)",
         }}
+        role="img"
+        aria-label="Futuristic sci-fi background with digital grid patterns and cyberpunk aesthetic"
       >
         <div className="absolute inset-0 bg-background/80" />
       </div>
