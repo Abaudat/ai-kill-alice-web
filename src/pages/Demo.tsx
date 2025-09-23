@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import ParallaxBackground from "@/components/ParallaxBackground";
 import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
 import { ExternalLink } from "lucide-react";
 import steamLogo from "@/assets/steam-white.svg";
 import discordLogo from "@/assets/discord-white.png";
@@ -10,6 +11,7 @@ import {useEffect, useRef, useState} from "react";
 const Demo = () => {
 
   const [showDemo, setShowDemo] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const unityInstanceRef = useRef<any>(null);
 
@@ -32,6 +34,7 @@ const Demo = () => {
         matchWebGLToCanvasSize: false
       }).then((instance: any) => {
         unityInstanceRef.current = instance;
+        setIsLoading(false);
       });
     };
     document.body.appendChild(script);
@@ -63,7 +66,10 @@ const Demo = () => {
               variant="accent" 
               size="lg" 
               className={showDemo ? "hidden" : "hidden md:inline-block w-full h-24 text-lg font-orbitron col-start-2"} 
-              onClick={() => setShowDemo(true)}
+              onClick={() => {
+                setShowDemo(true);
+                setIsLoading(true);
+              }}
               aria-label="Launch AI Kill Alice browser demo"
             >
               <div className="text-left">
@@ -71,6 +77,15 @@ const Demo = () => {
               </div>
             </Button>
           </section>
+          
+          {/* Loading Progress Bar */}
+          {isLoading && (
+            <div className="w-full max-w-[960px] mx-auto mb-4">
+              <div className="text-sm font-orbitron text-primary/80 mb-2">Loading game...</div>
+              <Progress className="w-full animate-pulse" />
+            </div>
+          )}
+          
           <canvas
               ref={canvasRef}
               id="unity-canvas"
