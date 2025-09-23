@@ -78,15 +78,16 @@ const Demo = () => {
             </Button>
           </section>
           
-          {/* Loading Progress Bar */}
-          {isLoading && (
-            <div className="w-full max-w-[960px] mx-auto mb-4">
-              <div className="text-sm font-orbitron text-primary/80 mb-2">Loading game...</div>
-              <Progress className="w-full animate-pulse" />
-            </div>
-          )}
-          
-          <canvas
+          <div className="relative">
+            {/* Loading Progress Bar - Overlay on canvas */}
+            {isLoading && (
+              <div className="absolute top-4 left-4 right-4 z-10">
+                <div className="text-sm font-orbitron text-white mb-2">Loading game...</div>
+                <Progress className="w-full animate-pulse" />
+              </div>
+            )}
+            
+            <canvas
               ref={canvasRef}
               id="unity-canvas"
               width={960}
@@ -95,7 +96,8 @@ const Demo = () => {
               role="application"
               aria-label="AI Kill Alice game demo - Interactive logic puzzle game"
               tabIndex={showDemo ? 0 : -1}
-          />
+            />
+          </div>
 
           <p className="text-xl font-orbitron text-primary/80 block md:hidden" role="text">
             The demo is available on Steam. Join the community on Discord!
