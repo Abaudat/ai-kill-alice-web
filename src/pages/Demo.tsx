@@ -79,11 +79,17 @@ const Demo = () => {
           </section>
           
           <div className="relative">
-            {/* Loading Progress Bar - Overlay on canvas */}
+            {/* Loading Progress Bar - Centered overlay on canvas */}
             {isLoading && (
-              <div className="absolute top-4 left-4 right-4 z-10">
-                <div className="text-sm font-orbitron text-white mb-2">Loading game...</div>
-                <Progress className="w-full animate-pulse" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-10 bg-black/20">
+                <div className="text-sm font-orbitron text-primary mb-4">Loading game...</div>
+                <Progress 
+                  className="w-80 h-2" 
+                  style={{ 
+                    backgroundColor: 'hsl(var(--muted))',
+                    ['--progress-background' as any]: 'hsl(var(--primary))'
+                  }} 
+                />
               </div>
             )}
             
