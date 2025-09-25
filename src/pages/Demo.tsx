@@ -107,7 +107,7 @@ const Demo = () => {
           <div className="relative">
             {/* Loading Animation - Centered overlay on canvas */}
             {isLoading && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center z-10 bg-black/20">
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
                 <div className="text-sm font-orbitron text-primary mb-2">
                   Loading game{loadingDots}
                 </div>
