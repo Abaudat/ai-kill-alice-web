@@ -122,9 +122,7 @@ const Demo = () => {
             <canvas
               ref={canvasRef}
               id="unity-canvas"
-              width={960}
-              height={600}
-              className={showDemo ? "block bg-[#231F20]" : "hidden"}
+              className={showDemo ? "w-full aspect-video bg-[#231F20] mx-auto" : "hidden"}
               role="application"
               aria-label="AI Kill Alice game demo - Interactive logic puzzle game"
               tabIndex={showDemo ? 0 : -1}
