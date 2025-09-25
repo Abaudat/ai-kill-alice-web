@@ -84,11 +84,12 @@ const Demo = () => {
               <div className="absolute inset-0 flex flex-col items-center justify-center z-10 bg-black/20">
                 <div className="text-sm font-orbitron text-primary mb-4">Loading game...</div>
                 <Progress 
-                  className="w-80 h-2" 
+                  className="w-80 h-2 animate-pulse" 
                   style={{ 
                     backgroundColor: 'hsl(var(--muted))',
                     ['--progress-background' as any]: 'hsl(var(--primary))'
-                  }} 
+                  }}
+                  value={undefined}
                 />
               </div>
             )}
