@@ -1,7 +1,6 @@
 import Navigation from "@/components/Navigation";
 import ParallaxBackground from "@/components/ParallaxBackground";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import { ExternalLink } from "lucide-react";
 import steamLogo from "@/assets/steam-white.svg";
 import discordLogo from "@/assets/discord-white.png";
@@ -12,6 +11,8 @@ const Demo = () => {
 
   const [showDemo, setShowDemo] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [loadingDots, setLoadingDots] = useState("");
+  const [showSlowMessage, setShowSlowMessage] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const unityInstanceRef = useRef<any>(null);
 
@@ -48,6 +49,31 @@ const Demo = () => {
       document.body.removeChild(script);
     };
   }, [showDemo]);
+
+  // Loading dots animation
+  useEffect(() => {
+    if (!isLoading) {
+      setLoadingDots("");
+      setShowSlowMessage(false);
+      return;
+    }
+
+    const dotsInterval = setInterval(() => {
+      setLoadingDots(prev => {
+        if (prev === "...") return "";
+        return prev + ".";
+      });
+    }, 1000);
+
+    const slowMessageTimeout = setTimeout(() => {
+      setShowSlowMessage(true);
+    }, 5000);
+
+    return () => {
+      clearInterval(dotsInterval);
+      clearTimeout(slowMessageTimeout);
+    };
+  }, [isLoading]);
   
   return (
     <ParallaxBackground>
@@ -79,18 +105,17 @@ const Demo = () => {
           </section>
           
           <div className="relative">
-            {/* Loading Progress Bar - Centered overlay on canvas */}
+            {/* Loading Animation - Centered overlay on canvas */}
             {isLoading && (
               <div className="absolute inset-0 flex flex-col items-center justify-center z-10 bg-black/20">
-                <div className="text-sm font-orbitron text-primary mb-4">Loading game...</div>
-                <Progress 
-                  className="w-80 h-2 animate-pulse" 
-                  style={{ 
-                    backgroundColor: 'hsl(var(--muted))',
-                    ['--progress-background' as any]: 'hsl(var(--primary))'
-                  }}
-                  value={undefined}
-                />
+                <div className="text-sm font-orbitron text-primary mb-2">
+                  Loading game{loadingDots}
+                </div>
+                {showSlowMessage && (
+                  <div className="text-xs font-orbitron text-primary/70">
+                    This might take up to a minute
+                  </div>
+                )}
               </div>
             )}
             
