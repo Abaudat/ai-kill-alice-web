@@ -78,7 +78,7 @@ const Demo = () => {
   return (
     <ParallaxBackground>
       <Navigation />
-      <main className="container mx-auto px-6 pt-24 md:pt-20 pb-4">
+      <main className="container mx-auto px-6 pt-32 md:pt-28 pb-4">
         <div className="max-w-4xl mx-auto text-center space-y-12">
           <header className="space-y-6">
             <h1 className="text-4xl md:text-6xl font-bebas font-bold glow tracking-widest">
