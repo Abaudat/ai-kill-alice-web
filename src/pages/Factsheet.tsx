@@ -59,7 +59,7 @@ const Factsheet = () => {
                   
                   <div>
                     <p className="text-accent text-sm uppercase tracking-wider mb-1" role="term">&gt; Release Date</p>
-                    <p className="text-primary text-lg" role="definition">TBD</p>
+                    <p className="text-primary text-lg" role="definition">December 26th 2025</p>
                   </div>
                 </div>
               </div>
