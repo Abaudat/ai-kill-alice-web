@@ -1,6 +1,9 @@
 import ParallaxBackground from "@/components/ParallaxBackground";
 import Navigation from "@/components/Navigation";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import aiKillAliceIcon from "@/assets/ai-kill-alice-icon.png";
+import steamLogo from "@/assets/steam-white.svg";
 
 const Landing = () => {
   return (
@@ -23,6 +26,19 @@ const Landing = () => {
               BY ADRIAN BAUDAT<span className="cursor" aria-hidden="true"></span>
             </p>
           </div>
+
+          <a
+            href="https://store.steampowered.com/app/3236050/AI_Kill_Alice/?utm_source=web&utm_campaign=front"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View AI Kill Alice on Steam"
+          >
+            <Button variant="accent" size="lg" className="mt-4 font-orbitron">
+              <img src={steamLogo} className="w-5 h-5" style={{filter: 'brightness(0)'}} alt="" aria-hidden="true" />
+              <span>VIEW ON STEAM</span>
+              <ExternalLink className="w-4 h-4" aria-hidden="true" />
+            </Button>
+          </a>
         </section>
       </main>
     </ParallaxBackground>
