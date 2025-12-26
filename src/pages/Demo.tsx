@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import ParallaxBackground from "@/components/ParallaxBackground";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import steamLogo from "@/assets/steam-white.svg";
+
 import discordLogo from "@/assets/discord-white.png";
 import itchLogo from "@/assets/itch-logo.svg";
 import {useEffect, useRef, useState} from "react";
@@ -132,42 +132,25 @@ const Demo = () => {
           </div>
 
           <p className="text-xl font-orbitron text-primary/80 block md:hidden" role="text">
-            The demo is available on Steam. Join the community on Discord!
+            The demo is also available on Itch.io. Join the community on Discord.
           </p>
 
           <p className="text-xl font-orbitron text-primary/80 hidden md:block" role="text">
-            The demo is also available on Itch.io and Steam. Join the community on Discord!
+            The demo is also available on Itch.io. Join the community on Discord.
           </p>
           
-          <section className="grid md:grid-cols-3 gap-6 mt-12" aria-label="Download demo and community links">
+          <section className="grid md:grid-cols-2 gap-6 mt-12" aria-label="Download demo and community links">
             <a
               href="https://bibibis.itch.io/ai-kill-alice"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:block"
+              className="block"
               aria-label="Download AI Kill Alice demo from Itch.io gaming platform"
             >
               <Button variant="terminal" size="lg" className="w-full h-24 text-lg font-orbitron bg-background border-primary hover:bg-background/80">
                 <img src={itchLogo} className="w-8 h-8 brightness-0" style={{filter: 'brightness(0) saturate(100%) invert(59%) sepia(99%) saturate(1347%) hue-rotate(60deg) brightness(103%) contrast(103%)'}} alt="Itch.io logo - Independent game distribution platform" />
                 <div className="text-left">
                   <div>ITCH.IO</div>
-                  <div className="text-xs opacity-70">DEMO</div>
-                </div>
-                <ExternalLink className="w-4 h-4 ml-auto" aria-hidden="true" />
-              </Button>
-            </a>
-
-            <a
-              href="https://store.steampowered.com/app/3236050/AI_Kill_Alice/?utm_source=web&utm_campaign=web_demo_button"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-              aria-label="Download AI Kill Alice demo from Steam gaming platform"
-            >
-              <Button variant="accent" size="lg" className="w-full h-24 text-lg font-orbitron">
-                <img src={steamLogo} className="w-8 h-8" style={{filter: 'brightness(0)'}} alt="Steam logo - PC gaming platform by Valve" />
-                <div className="text-left">
-                  <div>STEAM</div>
                   <div className="text-xs opacity-70">DEMO</div>
                 </div>
                 <ExternalLink className="w-4 h-4 ml-auto" aria-hidden="true" />
